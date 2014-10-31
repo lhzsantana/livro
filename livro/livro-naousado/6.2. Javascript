@@ -1,0 +1,42 @@
+<script src="elasticsearch-js/elasticsearch.jquery.min.js"></script>
+
+				var client = new $.es.Client({
+					hosts: '54.172.18.35:9234'
+				});
+				
+				var points='{"index": "severino","type": "servico,permanente","size": "60","body":{ "query": { "filtered": { "query": { "match_all": {} }, "filter": { "geo_distance": { "distance": "3km", "location": { "lat": "'+position.coords.latitude+'", "lon": "'+position.coords.longitude+'" } } } } } }}';
+				//alert(points);
+	
+				var obj = JSON.parse(points);
+				
+				client.search(obj).then(function (resp) {
+					var hits = resp.hits.hits;
+					var doc_ids = [];
+					
+				var img="images/icon_shop.png";
+							
+				for(i=0; i < hits.length; i++) {
+						hit = hits[i];
+						//alert(hit._source.description);
+						//alert(hit._source.location.lat);
+						//alert(hit._source.location.lon);
+						//content = content + ' ' + hit._source + '<br />';
+						//alert(hit._source.localizacao);
+						
+						if(hit._source.location!=undefined){
+							var myLatlng = new google.maps.LatLng(hit._source.location.lat,hit._source.location.lon);
+								
+							var marker = new google.maps.Marker({
+								position: myLatlng,
+								map: map,
+								title: hit._source.description,
+								icon:img
+							});
+						}
+
+					}
+					
+				}, function (err) {
+					console.trace(err.message);
+				});	
+			}

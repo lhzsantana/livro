@@ -1,0 +1,10 @@
+PUT /voluntarios/_mapping/ong
+{
+   "ong" : {
+       "properties" : {
+            "nome" : {
+            	"type" : "string"
+            }
+        }
+    }
+}

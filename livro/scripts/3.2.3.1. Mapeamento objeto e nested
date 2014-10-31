@@ -1,0 +1,42 @@
+PUT /voluntarios/oportunidade/_mapping
+{
+   "oportunidade" : {
+       "properties" : {
+            "titulo" : {
+            	"type" : "string",
+            	"fields" : {
+            		"raw" : {
+            			"type" : "string",
+            			"index" : "not_analyzed" 
+            		}
+            	}
+            },
+            "descricao" : {"type" : "string", "analyzer":"brazilian" },
+            "organizacao" : {
+            	"type" : "string"
+            	
+            },
+            "contato" : {
+                "type" : "nested",
+                "properties": {
+                    "nome" : {"type": "string" },
+                    "sobrenome"  : {"type": "string" }
+                }
+            },
+            "endereco" : {
+            	"type" : "object",
+            	"properties" : {
+            		"logradouro" : {"type" : "string"},
+            		"cidade" : {"type" : "string"},
+            		"estado" : {"type" : "string"}
+            	}
+            },
+            "habilidades" : {
+                "properties" : {
+                    "nome" : {"type" : "string"},
+                    "descricao" : {"type" : "string"}
+                }
+            }
+        }
+    }
+}

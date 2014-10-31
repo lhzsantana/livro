@@ -1,0 +1,20 @@
+PUT /static
+{
+	"settings": {
+		"analysis": {
+			"filter": {
+				"phonetic_filter" : {
+					"type" : "phonetic",
+					"encoder": "metaphone",
+					"replace" : false
+				}
+			},
+			"analyzer": {
+				"phonetic_analyzer" : {
+					"tokenizer" : "standard",
+					"filter" : ["phonetic_filter"]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+POST /voluntarios/_close
+
+PUT /voluntarios/_settings
+{
+  "index": {
+    "analysis": {
+      "tokenizer": {
+        "comma": {"type": "pattern", "pattern": ","}        
+      },
+      "analyzer": {
+        "analisador_titulo": {
+         "type": "custom",
+         "tokenizer": "whitespace",
+         "filter": ["trim", "lowercase"]}
+        }
+    }
+  }     
+}
+
+POST /voluntarios/_open

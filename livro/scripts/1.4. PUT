@@ -1,0 +1,7 @@
+POST /voluntarios/oportunidade/1
+{
+	"titulo" : "Assistente social",
+	"descricao" : "Assistente social para crianças carentes",
+	"organizacao" : "Grupo de Apoio à Crianças Carentes",
+	"cidade" : "Lins-SP"
+}

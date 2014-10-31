@@ -1,0 +1,19 @@
+PUT /static
+{
+	"settings": {
+		"analysis": {,
+            		"char_filter" : {
+				//filtros de caracteres
+			}
+			"tokenizer": {
+				//filtros
+			},
+			"filter": {
+				//filtros
+			},
+			"analyzer": {
+				//analisadores
+			}
+		}
+	}
+}

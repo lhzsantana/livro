@@ -1,0 +1,11 @@
+PUT /voluntarios/oportunidades/_mapping
+{
+    "oportunidades" : {
+        "properties" : {
+            "titulo" : {"type" : "string" },
+            "descricao" : {"type" : "string" },
+            "organizacao" : {"type" : "string" },
+            "cidade" : {"type" : "string" }
+        }
+    }
+}

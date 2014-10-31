@@ -1,0 +1,13 @@
+PUT /voluntarios/_mapping/ong
+{
+   "_all" : {
+   		"enabled" : false
+   	},
+   "ong" : {
+       "properties" : {
+            "nome" : {
+            	"type" : "string"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+GET /voluntarios/oportunidade/_search
+{
+    "query": {
+        "multi_match": {
+            "query":    "caridade",
+            "fields": [ "title*", "title_es^2" ], 
+            "type":     "most_fields"
+        }
+    }
+}

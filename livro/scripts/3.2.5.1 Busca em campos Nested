@@ -1,0 +1,23 @@
+{
+  "query": {
+    "nested": {
+      "path": "consultations",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "match": {
+                "consultations.prescriptions": "alfuorism"
+              }
+            },
+            {
+              "match": {
+                "consultations.Diagnosis": "Fever"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

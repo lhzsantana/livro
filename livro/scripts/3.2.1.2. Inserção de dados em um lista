@@ -1,0 +1,18 @@
+PUT /voluntarios/oportunidade/4
+{
+    "oportunidade" : {
+        "titulo" : "Professor de informática para idosos",
+    	"organizacao" : "Universidade da Terceira Idade",
+	    "cidade" : "São José do Rio Preto-SP",
+        "habilidades" : [
+            {
+                "nome" : "Windows básico",
+                "descricao" : "Dominar Windows básico"
+            },
+            {
+                "nome" : "Pacote Office",
+                "descricao" : "Ensinar pacote office"
+            }
+        ]
+    }
+}

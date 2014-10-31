@@ -1,0 +1,13 @@
+PUT /voluntarios/.percolator/{
+    "query" : {
+        "match" : {
+            "description" : "professor"
+        }
+    }
+}
+
+GET /voluntarios/oportunidade/_percolate{
+    "oportunidade" : {
+        "description" : "Professor de inglês para crianças"
+    }
+}

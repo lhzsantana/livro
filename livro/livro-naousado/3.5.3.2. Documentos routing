@@ -1,0 +1,27 @@
+POST static/job?routing=Monster
+{
+"aggregator" : "Monster",
+"city" : "London",
+"company" : "Microsoft",
+"title" : "Programmer",
+"priority" : "1"
+}
+
+POST static/job
+{
+"aggregator" : "Monster",
+"city" : "London",
+"company" : "Microsoft",
+"title" : "Programmer",
+"priority" : "1"
+}
+
+
+PUT static/job/2
+{
+"aggregator" : "Monster",
+"city" : "Buenos Aires",
+"company" : "Sun",
+"title" : "Coder",
+"priority" : "1"
+}

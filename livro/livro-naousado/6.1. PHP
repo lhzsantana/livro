@@ -1,0 +1,33 @@
+require "vendor/autoload.php";
+	
+	$ELSEARCH_SERVER = array("54.172.18.35:9234");
+	$conn = array();
+	$conn["hosts"] = $ELSEARCH_SERVER;
+	
+	$client = new Elasticsearch\Client($conn);
+	//$client = new Elasticsearch\Client();
+	
+	$params = array();
+	//indice
+	$params["index"] = "severino";
+	$params["type"]  = "servico";	
+	//$params["id"]  = "servico";	
+	
+	$params["body"] = array(
+		"description" => $description,
+		"price" => $price,
+		"address" => $location,
+		"location" => array(
+			"lat" => $lat,
+			"lon" => $lng
+		)
+	);
+	
+	echo $params;
+	
+	try {
+		//chamada ao server
+		$results = $client->index($params);
+	} catch (Exception $e) {
+		echo "Caught exception: ",  $e->getMessage(), "\n";
+	}

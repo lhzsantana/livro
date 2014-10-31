@@ -1,0 +1,29 @@
+PUT /voluntarios/
+{
+    "index" : {
+        "analysis" : {
+            "analyzer" : {
+                "synonyms_analyzer" : {
+                    "tokenizer" : "whitespace",
+                    "filter" : ["synonym"]
+                }
+            },
+            "filter" : {
+    			//com lista
+                "synonym" : {
+                    "type" : "synonym", 
+        			"synonyms": [ 
+						"educador, professor",
+						"assitente, auxiliar"
+					]
+                },
+				//com arquivo
+				"synonym_filter_file": {
+					"type": "synonym",
+					"synonyms_path" : "synonyms.txt"
+				}
+				}
+            }
+        }
+    }
+}

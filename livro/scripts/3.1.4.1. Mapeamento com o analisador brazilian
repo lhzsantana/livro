@@ -1,0 +1,16 @@
+PUT /voluntarios/oportunidade/_mapping
+{
+    "oportunidade" : {
+        "properties" : {
+            "titulo" : {"type" : "string"},
+            "descricao" : {"type" : "string", "analyzer":"brazilian" },
+            "organizacao" : {"type" : "string"},
+            "cidade" : {"type" : "string" }
+        }
+    }
+}
+
+PUT /voluntarios/oportunidade/1
+{
+    "descricao": "Essa é uma oportunidade para cuidar de crianças carentes." 
+}

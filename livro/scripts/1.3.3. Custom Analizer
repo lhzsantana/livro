@@ -1,0 +1,11 @@
+PUT /voluntarios/oportunidade/_mapping
+{
+    "oportunidade" : {
+        "properties" : {
+            "titulo" : {"type" : "string", "analyzer":"analisador_titulo"},
+            "descricao" : {"type" : "string", "analyzer":"standard"},
+            "organizacao" : {"type" : "string", "analyzer":"keyword"},
+            "cidade" : {"type" : "string" }
+        }
+    }
+}

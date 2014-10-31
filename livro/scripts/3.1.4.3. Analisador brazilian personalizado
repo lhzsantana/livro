@@ -1,0 +1,16 @@
+PUT /voluntarios
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "brazilian_personalizado": {
+          "type": "brazilian",
+          "stem_exclusion": [ "organization", "organizations" ], 
+          "stopwords": [ 
+            "para", "de"
+          ]
+        }
+      }
+    }
+  }
+} 

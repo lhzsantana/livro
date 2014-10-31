@@ -1,0 +1,85 @@
+PUT meutrabalho/emprego/_mapping
+{
+    "job" : {    
+		"_routing":{
+			"required":true,
+			"path":"aggregator"
+		},
+    	"_ttl" : {
+			"enabled" : true
+		},
+		"properties" : {
+			"aggregator" : {
+				"type" : "string"
+			},
+			"city" : {
+				"type" : "string",
+				"fields" : {
+                    "raw" : {
+						"type" : "string",
+						"index" : "not_analyzed"
+					}
+                }
+			},
+			"company" : {
+				"type" : "string",
+				"fields" : {
+                    "raw" : {
+						"type" : "string",
+						"index" : "not_analyzed"
+					}
+                }
+			},
+			"id" : {
+				"type" : "string"
+			},
+			"link" : {
+				"type" : "string"
+			},
+			"location" : {
+				"type" : "geo_point"
+			},
+			"long_state" : {
+				"type" : "string"
+			},
+			"postdate" : {
+				"type" : "date",
+				"format" : "yyyy-MM-dd"
+			},
+			"short_state" : {
+				"type" : "string"
+			},
+			"signature" : {
+				"type" : "string"
+			},
+			"source" : {
+				"type" : "string"
+			},
+			"zipcode" : {
+				"type" : "string"
+			},
+			"description" : {
+				"type" : "string"
+			},
+			
+			"title" : {
+				"type": "string",
+				"index" : "analyzed",
+                
+				"fields" : {
+                    "synonym" : {
+						"type" : "string",
+						"analyzer" : "synonyms_analyzer"
+					},
+                    "raw" : {
+						"type" : "string",
+						"index" : "not_analyzed"
+					}
+                }
+			},			
+			"priority" : {
+				"type" : "long"
+			}
+		}
+    }
+}

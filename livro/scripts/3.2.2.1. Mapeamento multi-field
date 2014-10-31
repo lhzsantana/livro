@@ -1,0 +1,25 @@
+PUT /voluntarios/oportunidade/_mapping
+{
+    "oportunidade" : {
+        "properties" : {
+            "titulo" : {
+            	"type" : "string",
+            	"fields" : {
+                    "raw" : {
+						"type" : "string",
+						"index" : "not_analyzed" 
+					}
+				}
+            },
+            "descricao" : {"type" : "string", "analyzer":"brazilian" },
+            "organizacao" : {"type" : "string"},
+            "cidade" : {"type" : "string" },
+            "habilidades" : {
+                "properties" : {
+                    "nome" : {"type" : "string"},
+                    "descricao" : {"type" : "string"}
+                }
+            }
+        }
+    }
+}

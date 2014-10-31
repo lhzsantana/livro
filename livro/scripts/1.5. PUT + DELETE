@@ -1,0 +1,9 @@
+PUT /livrariavirtual/livro/1
+{ 
+	"autor" : "Luiz Santana",
+	"titulo" : "Sua primeira aplicação em Elasticsearch...",
+	"texto" : "O objetivo do Elasticsearch é apoiar …",
+	"assunto" : "Elasticsearch"
+}
+
+DELETE /livrariavirtual/livro/1

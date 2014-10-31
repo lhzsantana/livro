@@ -1,0 +1,11 @@
+PUT /company
+{
+  "mappings": {
+    "branch": {},
+    "employee": {
+      "_parent": {
+        "type": "branch" 
+      }
+    }
+  }
+}
